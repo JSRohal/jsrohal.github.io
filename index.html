@@ -77,17 +77,16 @@
   _____   /::::::\    \   /:::/____/   \:::\____\   /::::::\    \   _____    /:::/  |::|   | _____            /::::::\   \:::\    \  
  /\    \ /:::/\:::\    \ |:::|    |     |:::|    | /:::/\:::\    \ /\    \  /:::/   |::|   |/\    \          /:::/\:::\   \:::\____\ 
 /::\    /:::/  \:::\____\|:::|____|     |:::|    |/:::/  \:::\    /::\____\/:: /    |::|   /::\____\        /:::/  \:::\   \:::|    |
-\::\  /:::/    \::/    / \:::\    \   /:::/    / \::/    \:::\  /:::/    /\::/    /|::|  /:::/    /        \::/   |::::\  /:::|____|
- \:::\/:::/    / \/____/   \:::\    \ /:::/    /   \/____/ \::::\/:::/    /  \/____/ |::| /:::/    /          \/____|::::::\/:::/    / 
-  \::::::/    /             \:::\    /:::/    /             \::::::/    /           |::|/:::/    /                 |:::::::::/    /  
-   \::::/    /               \:::\__/:::/    /               \::::/    /            |::::::/    /                  |:::|\::::/    /   
-    \::/    /                 \::::::::/    /                /:::/    /             |:::::/    /                   |::| \::/____/    
-     \/____/                   \::::::/    /                /:::/    /              |::::/    /                    |::|  ~|          
-                                 \::::/    /                /:::/    /               /:::/    /                     |::|   |          
-                                  \::/____/                /:::/    /               /:::/    /                      \::|   |          
-                                   ~~                      \::/    /                \::/    /                        \:|   |          
-                                                            \/____/                  \/____/                          \|___|          
-                                                                                                                                     
+\::\  /:::/    \::/    / \:::\    \    /:::/    / \::/    \:::\   /:::/    /\::/     /|::|  /:::/   /        \::/  |::::\  /::: |____|
+ \:::\/:::/    / \/____/   \:::\    \ /:::/    /   \/____/ \::::\/:::/    /  \/____/ |::| /:::/    /          \/____|::::::\/:::/   / 
+  \::::::/    /             \:::\    /:::/    /             \::::::/    /           |::|/:::/     /                 |:::::::::/     /  
+   \::::/    /               \:::\__/:::/    /               \::::/    /            |::::::/     /                  |:::|\::::/    /   
+    \::/    /                 \::::::::/    /                /:::/    /             |:::::/     /                   |::| \::/____/    
+     \/____/                   \::::::/    /                /:::/    /              |::::/     /                    |::|  ~|          
+                                 \::::/    /               /:::/    /               /:::/     /                     |::|   |          
+                                  \::/____/               /:::/    /               /:::/     /                      \::|   |          
+                                   ~~                     \::/    /                \::/     /                        \:|   |          
+                                                          \/____ /                   \/____ /                          \|___|                                                                                                                                 
             </pre>
 
             <p class="line boot-line">&gt; BIOS v1.1.0.4 ...</p>
@@ -158,67 +157,67 @@
             <h2 class="section-title">// PROJECTS</h2>
             <div class="projects-grid">
                 <article class="project-card">
-                    <h3>&gt; job_application_tracker</h3>
+                    <h3>&gt; project A</h3>
                     <p>A self-hosted job-search dashboard built with Node.js / Express and vanilla JS.
                        Connects to a Google Sheet (via CSV export) or an uploaded .xlsx / .csv, normalizes
                        free-form application statuses into a fixed funnel, and computes response, interview,
                        and offer rates. Ships a downloadable spreadsheet template and a no-API-key setup flow.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; guardian_state_recognizer</h3>
+                    <h3>&gt; project B</h3>
                     <p>An end-to-end AWS data + ML pipeline for driver-state recognition. CDK-deployed Lambda
                        triggered by S3 uploads; streams gzipped JSONL line-by-line to keep memory low,
                        validates and splits into 90/10 train/test (plus validation), and writes a manifest
                        for downstream SageMaker training of a YOLOv8 model.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; cancer_predictor</h3>
+                    <h3>&gt; project C</h3>
                     <p>An ID3-style decision tree classifier built from scratch in Python to predict cancer
                        vs. non-cancer samples from gene-mutation data. Handles class imbalance via
                        oversampling and accelerates the entropy / information-gain hot path with a Cython
                        extension compiled with -O3 / -march=native.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; cgra_hw_security_research</h3>
+                    <h3>&gt; project D</h3>
                     <p>Research on Coarse-Grained Reconfigurable Architectures using CGRA-Flow, VectorCGRA,
                        Garnet, and PyMTL3. Wrote C++ kernels, mapped them onto reconfigurable fabrics, and
                        investigated a published CVE — including a CGRA-based secure cache check against
                        timing attacks.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; systemverilog_cpu</h3>
+                    <h3>&gt; project E</h3>
                     <p>A single-cycle MIPS-style CPU implemented in SystemVerilog with a full datapath and
                        control unit: PC, instruction memory, register file, ALU, sign-extension, branch /
                        jump logic, and data memory. Verified end-to-end with Verilator and custom testbenches.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; parallel_hash_cracker</h3>
+                    <h3>&gt; project F</h3>
                     <p>A distributed SHA-256 password cracker written in C with OpenMPI. Splits the password
                        search space across MPI ranks, broadcasts the salt and target hash, and uses
                        early-termination messaging so the first rank to find a match short-circuits the cluster.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; custom_bash_shell</h3>
+                    <h3>&gt; project G</h3>
                     <p>A Unix shell in C++ with a Flex scanner and Bison parser. Builds a linked list of
                        command structs supporting argument parsing, I/O redirection (including append for
                        stdout/stderr), and pipelines, then executes them with fork/exec.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; wordle_clone</h3>
+                    <h3>&gt; project H</h3>
                     <p>A full-stack Wordle clone built with a team using JavaScript, React, Node, Tailwind,
                        and Supabase. Practiced collaborative GitHub workflows; produced UML diagrams and
                        Jest unit tests; shipped extra pages and minigames; wrote a solver algorithm that
                        cracks Wordle puzzles automatically.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; spotify_karaoke_app</h3>
+                    <h3>&gt; project I</h3>
                     <p>A full-stack web app letting users log in with Spotify, play songs, and follow along
                        with synchronized lyrics. Spotify Web API for OAuth 2.0, playlist retrieval, and
                        real-time playback, plus a Lyric Finder API and Album Cover API. React front-end
                        with React Router and hooks; Node.js / Express back-end.</p>
                 </article>
                 <article class="project-card">
-                    <h3>&gt; arduino_rtc_led_sign</h3>
+                    <h3>&gt; project J</h3>
                     <p>A standalone clock + message display built around an Arduino paired with an RTC
                        module for accurate timekeeping across power cycles, driving an LED matrix sign for
                        the readout. Firmware in C/C++, I2C with the RTC, and managed display refresh and
@@ -240,7 +239,7 @@
   "status":   "open to work"
 }
             </pre>
-            <p class="line">&gt; Create for Good<span class="cursor"></span></p>
+            <p class="line">&gt; Create for Good...<span class="cursor"></span></p>
         </section>
     </main>
 
