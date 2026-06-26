@@ -687,7 +687,7 @@ body {
 .bottom-label {
     font-family: var(--mono);
     font-size: 0.72rem;
-    color: var(--rose-dim);
+    color: var(--cyan);
     letter-spacing: 0.1em;
     margin-right: 0.25rem;
 }
