@@ -601,7 +601,7 @@ body {
 
 .rp-label {
     font-size: 0.68rem;
-    color: var(--rose-dim);
+    color: var(--rose);
     letter-spacing: 0.14em;
     text-transform: uppercase;
 }
