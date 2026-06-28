@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John S. Rohal // Terminal</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favico.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=8" />
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="crt-flicker"></div>
+
+    <!-- ═══════════════ LEFT SIDEBAR ═══════════════ -->
+    <aside class="sidebar">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="sidebar-header">
+            <div class="prompt-line"><span class="prompt">ver.8</span></div>
+            <h1 class="sidebar-title">John S. Rohal</h1>
+            <p class="sidebar-subtitle">// personal_portfolio.exe</p>
+        </div>
+        <nav class="nav" id="navMenu">
+            <ul>
+                <li><a href="#home"     class="nav-link active" data-target="home">    <span class="bracket">[</span> &#127968; <span class="bracket">]</span> home</a></li>
+                <li><a href="#about"    class="nav-link"        data-target="about">   <span class="bracket">[</span> &#x1F6C8;  <span class="bracket">]</span> about</a></li>
+                <li><a href="#projects" class="nav-link"        data-target="projects"><span class="bracket">[</span> &#9731;   <span class="bracket">]</span> projects</a></li>
+                <li><a href="#contact"  class="nav-link"        data-target="contact"> <span class="bracket">[</span> &#9993;   <span class="bracket">]</span> contact</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="status-line"><span class="dot"></span> ONLINE</div>
+            <div class="status-line muted">// session active</div>
+        </div>
+    </aside>
+
+    <!-- ═══════════════ CENTER CONTENT ═══════════════ -->
+    <main class="terminal">
+
+        <!-- ══ HOME (unchanged) ══ -->
+        <section id="home" class="screen active">
+            <pre class="ascii" id="ascii-art">
+          _____                   _______                   _____                    _____                            _____          
+         /\    \                 /::\    \                 /\    \                  /\    \                          /\    \         
+        /::\    \               /::::\    \               /::\____\                /::\____\                        /::\    \        
+        \:::\    \             /::::::\    \             /:::/    /               /::::|   |                       /::::\    \       
+         \:::\    \           /::::::::\    \           /:::/    /               /:::::|   |                      /::::::\    \      
+          \:::\    \         /:::/~~\:::\    \         /:::/    /               /::::::|   |                     /:::/\:::\    \     
+           \:::\    \       /:::/    \:::\    \       /:::/____/               /:::/|::|   |                    /:::/__\:::\    \    
+           /::::\    \     /:::/    / \:::\    \     /::::\    \              /:::/ |::|   |                   /::::\   \:::\    \   
+  _____   /::::::\    \   /:::/____/   \:::\____\   /::::::\    \   _____    /:::/  |::|   | _____            /::::::\   \:::\    \  
+ /\    \ /:::/\:::\    \ |:::|    |     |:::|    | /:::/\:::\    \ /\    \  /:::/   |::|   |/\    \          /:::/\:::\   \:::\____\ 
+/::\    /:::/  \:::\____\|:::|____|     |:::|    |/:::/  \:::\    /::\____\/:: /    |::|   /::\____\        /:::/  \:::\   \:::|    |
+\::\  /:::/    \::/    / \:::\    \   /:::/    / \::/    \:::\  /:::/    /\::/    /|::|  /:::/    /        \::/   |::::\  /:::|____|
+ \:::\/:::/    / \/____/   \:::\    \ /:::/    /   \/____/ \::::\/:::/    /  \/____/ |::| /:::/    /          \/____|::::::\/:::/    / 
+  \::::::/    /             \:::\    /:::/    /             \::::::/    /           |::|/:::/    /                 |:::::::::/    /  
+   \::::/    /               \:::\__/:::/    /               \::::/    /            |::::::/    /                  |:::|\::::/    /   
+    \::/    /                 \::::::::/    /                /:::/    /             |:::::/    /                   |::| \::/____/    
+     \/____/                   \::::::/    /                /:::/    /              |::::/    /                    |::|  ~|          
+                                 \::::/    /                /:::/    /               /:::/    /                     |::|   |          
+                                  \::/____/                /:::/    /               /:::/    /                      \::|   |          
+                                   ~~                      \::/    /                \::/    /                        \:|   |          
+                                                            \/____/                  \/____/                          \|___|          
+            </pre>
+            <p class="line boot-line">&gt; BIOS v1.1.0.4 ...</p>
+            <p class="line boot-line">&gt; mounting filesystem <span class="ok">[OK]</span></p>
+            <p class="line boot-line">&gt; starting system clock <span class="ok">[SYNCHRONIZED]</span></p>
+            <p class="line boot-line">&gt; initializing memory ... <span class="accent">[##########]</span> <span class="accent">100%</span></p>
+            <p class="line boot-line">&nbsp;</p>
+            <h2 class="hello hero-fade">Hello, I'm <span class="accent">John S. Rohal</span>.</h2>
+            <p class="role hero-fade">Engineer // Developer // Creator</p>
+            <div class="cta-row hero-fade">
+                <a class="btn" href="./assets/jsr_resume.pdf" target="_blank">./resume.pdf</a>
+                <a class="btn" href="#contact" data-target="contact">./contact</a>
+            </div>
+        </section>
+
+        <!-- ══ ABOUT ══ -->
+        <section id="about" class="screen">
+            <p class="cmd"><span class="prompt">root@jsr</span>:<span class="path">~</span>$ cat about.txt</p>
+            <h2 class="section-title">// ABOUT_ME</h2>
+
+            <!-- Bio card -->
+            <div class="bio-card">
+                <div class="bio-label">// PROFILE</div>
+                <div class="bio-paras">
+                    <p class="paragraph">I am a Mechanical Engineering student at Ohio University with a passion for
+                    design, manufacturing, software development, and problem solving. My interest in engineering
+                    began at an early age while helping my father with hands-on projects, learning how things were
+                    built, repaired, and improved. Since then, that curiosity has evolved into a drive to understand
+                    complex systems and create practical solutions through engineering and technology.</p>
+                    <p class="paragraph">Beyond the classroom, I have participated in a variety of technical and
+                    leadership experiences including industry internships, student organizations, and collaborative
+                    design projects. These opportunities have strengthened my abilities in project management, CAD
+                    design, communication, problem solving, and cross-disciplinary teamwork.</p>
+                    <p class="paragraph">I enjoy tackling challenging problems, learning new technologies, and working
+                    with teams that value innovation and continuous improvement. Whether designing systems, writing
+                    code, or leading projects, I am committed to delivering quality results.</p>
+                </div>
+            </div>
+
+            <!-- Two-column grid: Experience left · Education + Hobbies right -->
+            <div class="about-grid">
+
+                <!-- EXPERIENCE -->
+                <div class="about-col">
+                    <h3 class="about-sub-title">// EXPERIENCE</h3>
+                    <div class="exp-list">
+                        <div class="exp-entry">
+                            <div class="exp-dot"></div>
+                            <div class="exp-body">
+                                <div class="exp-org">Ceco Concrete Construction</div>
+                                <div class="exp-role">Engineering Project Manager</div>
+                                <div class="exp-meta">Internship &nbsp;&middot;&nbsp; Summer 2024</div>
+                            </div>
+                        </div>
+                        <div class="exp-entry">
+                            <div class="exp-dot"></div>
+                            <div class="exp-body">
+                                <div class="exp-org">Ohio Department of Transportation</div>
+                                <div class="exp-role">Construction Engineer</div>
+                                <div class="exp-meta">Internship &nbsp;&middot;&nbsp; Summer 2023</div>
+                            </div>
+                        </div>
+                        <div class="exp-entry">
+                            <div class="exp-dot"></div>
+                            <div class="exp-body">
+                                <div class="exp-org">Amazon Inc.</div>
+                                <div class="exp-role">Equipment Operator</div>
+                                <div class="exp-meta">Full-Time &nbsp;&middot;&nbsp; 2022 – 2023</div>
+                            </div>
+                        </div>
+                        <div class="exp-entry exp-entry--last">
+                            <div class="exp-dot"></div>
+                            <div class="exp-body">
+                                <div class="exp-org">Amazon Inc.</div>
+                                <div class="exp-role">Fulfillment Center Warehouse Associate</div>
+                                <div class="exp-meta">Part-Time &nbsp;&middot;&nbsp; 2021 – 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDUCATION + HOBBIES right column -->
+                <div class="about-col about-col--right">
+
+                    <!-- Education file tree -->
+                    <h3 class="about-sub-title">// EDUCATION</h3>
+                    <div class="edu-tree">
+                        <div class="edu-root">
+                            <span class="edu-folder">&#128193;</span>
+                            <div class="edu-root-info">
+                                <span class="edu-degree">B.S. Mechanical Engineering</span>
+                                <span class="edu-school">Ohio University</span>
+                                <span class="edu-gpa">GPA: 3.70 / 4.00</span>
+                            </div>
+                        </div>
+                        <div class="edu-branch">
+                            <span class="tree-arm">&#9500;&#9472;&#9472;</span>
+                            <span class="tree-file">&#128196;</span>
+                            <span class="tree-label">Mathematics Minor</span>
+                        </div>
+                        <div class="edu-branch edu-branch--last">
+                            <span class="tree-arm">&#9492;&#9472;&#9472;</span>
+                            <span class="tree-file">&#128220;</span>
+                            <span class="tree-label">Lean-Six Sigma Cert.</span>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies (same style as experience) -->
+                    <h3 class="about-sub-title about-sub-title--gap">// HOBBIES &amp; PASSIONS</h3>
+                    <div class="exp-list">
+                        <div class="exp-entry">
+                            <div class="exp-dot exp-dot--cyan"></div>
+                            <div class="exp-body">
+                                <div class="exp-org">Ohio University Marching 110</div>
+                                <div class="exp-role">Active Member</div>
+                                <div class="exp-meta">Marching Band &nbsp;&middot;&nbsp; Ongoing</div>
+                            </div>
+                        </div>
+                        <div class="exp-entry">
+                            <div class="exp-dot exp-dot--cyan"></div>
+                            <div class="exp-body">
+                                <div class="exp-org">Session Musician</div>
+                                <div class="exp-role">Drums &nbsp;&middot;&nbsp; Guitar &nbsp;&middot;&nbsp; Saxophone</div>
+                                <div class="exp-meta">Multi-Instrument &nbsp;&middot;&nbsp; Ongoing</div>
+                            </div>
+                        </div>
+                        <div class="exp-entry exp-entry--last">
+                            <div class="exp-dot exp-dot--cyan"></div>
+                            <div class="exp-body">
+                                <div class="exp-org">Outdoors &amp; Fitness</div>
+                                <div class="exp-role">Fishing &nbsp;&middot;&nbsp; Weight Lifting &nbsp;&middot;&nbsp; Hiking</div>
+                                <div class="exp-meta">Active Lifestyle &nbsp;&middot;&nbsp; Ongoing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ PROJECTS ══ -->
+        <section id="projects" class="screen">
+
+            <!-- List view -->
+            <div id="projects-list">
+                <p class="cmd"><span class="prompt">root@jsr</span>:<span class="path">~</span>$ ls -la ./projects</p>
+                <h2 class="section-title">// PROJECTS</h2>
+                <div class="projects-grid">
+
+                    <article class="project-card">
+                        <h3>&gt; job_application_tracker</h3>
+                        <p class="card-brief">Self-hosted Node.js/Express dashboard that normalizes job-application statuses into a fixed funnel and computes response, interview, and offer rates.</p>
+                        <button class="card-expand" data-slug="job_application_tracker">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; guardian_state_recognizer</h3>
+                        <p class="card-brief">End-to-end AWS ML pipeline for real-time driver-state recognition using YOLOv8. CDK-deployed Lambda streams gzipped S3 uploads and writes SageMaker manifests.</p>
+                        <button class="card-expand" data-slug="guardian_state_recognizer">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; cancer_predictor</h3>
+                        <p class="card-brief">ID3 decision tree built from scratch in Python classifying cancer vs. non-cancer gene-mutation samples, with a Cython-accelerated entropy hot path compiled at -O3/-march=native.</p>
+                        <button class="card-expand" data-slug="cancer_predictor">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; cgra_hw_security_research</h3>
+                        <p class="card-brief">Research into CGRA security using CGRA-Flow, VectorCGRA, Garnet, and PyMTL3. Investigated a published CVE and implemented a CGRA-based cache timing-attack countermeasure.</p>
+                        <button class="card-expand" data-slug="cgra_hw_security_research">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; systemverilog_cpu</h3>
+                        <p class="card-brief">Single-cycle MIPS-style CPU in SystemVerilog with full datapath: PC, register file, ALU, sign-extension, and branch/jump logic. End-to-end verified with Verilator.</p>
+                        <button class="card-expand" data-slug="systemverilog_cpu">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; parallel_hash_cracker</h3>
+                        <p class="card-brief">Distributed SHA-256 password cracker in C with OpenMPI. Partitions the search space across ranks; early-termination messaging short-circuits the cluster on first match.</p>
+                        <button class="card-expand" data-slug="parallel_hash_cracker">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; custom_bash_shell</h3>
+                        <p class="card-brief">Unix shell in C++ using Flex and Bison. Supports argument parsing, I/O redirection including append for stdout/stderr, and full pipelines via fork/exec.</p>
+                        <button class="card-expand" data-slug="custom_bash_shell">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; wordle_clone</h3>
+                        <p class="card-brief">Full-stack Wordle clone built collaboratively with React, Node, Tailwind, and Supabase. Ships a solver algorithm, Jest unit tests, UML diagrams, and bonus minigames.</p>
+                        <button class="card-expand" data-slug="wordle_clone">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; spotify_karaoke_app</h3>
+                        <p class="card-brief">Full-stack karaoke app with Spotify OAuth 2.0, real-time playback control, and synchronized lyrics via Lyric Finder API. React/Router front end with Node.js/Express back end.</p>
+                        <button class="card-expand" data-slug="spotify_karaoke_app">[ expand &#x25B6; ]</button>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>&gt; arduino_rtc_led_sign</h3>
+                        <p class="card-brief">Standalone Arduino clock and scrolling message display. An RTC module keeps accurate time across power cycles; C/C++ firmware drives the LED matrix via I2C with managed refresh.</p>
+                        <button class="card-expand" data-slug="arduino_rtc_led_sign">[ expand &#x25B6; ]</button>
+                    </article>
+
+                </div><!-- /.projects-grid -->
+            </div><!-- /#projects-list -->
+
+            <!-- Detail view (populated by JS) -->
+            <div id="project-detail" class="project-detail">
+                <div class="detail-nav">
+                    <button class="detail-back" id="detail-back">&#x25C4; back</button>
+                    <h2 class="detail-title" id="detail-title"></h2>
+                </div>
+                <div class="detail-tech" id="detail-tech"></div>
+                <div class="detail-body">
+                    <div class="detail-text">
+                        <div class="detail-desc" id="detail-desc"></div>
+                    </div>
+                    <div class="detail-imgs" id="detail-imgs"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ══ CONTACT ══ -->
+        <section id="contact" class="screen">
+            <p class="cmd"><span class="prompt">root@jsr</span>:<span class="path">~</span>$ ./connect.sh</p>
+            <h2 class="section-title">// CONTACT</h2>
+
+            <div class="contact-rows">
+                <div class="contact-row">
+                    <span class="ca" id="ca-name">&#9672;</span>
+                    <span class="cl">name</span>
+                    <span class="cv">John S. Rohal</span>
+                </div>
+                <div class="contact-row">
+                    <span class="ca" id="ca-email">&#9672;</span>
+                    <span class="cl">email</span>
+                    <a href="mailto:jr699122@ohio.edu" class="cv cv-link">jr699122@ohio.edu</a>
+                </div>
+                <div class="contact-row">
+                    <span class="ca" id="ca-linkedin">&#9672;</span>
+                    <span class="cl">linkedin</span>
+                    <a href="https://www.linkedin.com/in/john-rohal" target="_blank" rel="noopener" class="cv cv-link">linkedin.com/in/john-rohal</a>
+                </div>
+                <div class="contact-row">
+                    <span class="ca" id="ca-github">&#9672;</span>
+                    <span class="cl">github</span>
+                    <a href="https://github.com/jsrohal" target="_blank" rel="noopener" class="cv cv-link">github.com/jsrohal</a>
+                </div>
+                <div class="contact-row">
+                    <span class="ca" id="ca-status">&#9672;</span>
+                    <span class="cl">status</span>
+                    <span class="cv cv-status"><span class="status-dot-green"></span>&nbsp;open to work</span>
+                </div>
+            </div>
+
+            <p class="line contact-footer">&gt; Create for Good<span class="cursor"></span></p>
+        </section>
+
+    </main><!-- /.terminal -->
+
+    <!-- ═══════════════ RIGHT PANEL ═══════════════ -->
+    <aside class="right-panel">
+        <span class="rp-label">// TERMINAL</span>
+        <p class="rp-welcome">WELCOME TO<br>MY PORTFOLIO</p>
+        <p class="rp-section">~/<span id="title-section">home</span></p>
+        <hr class="rp-divider" />
+        <div class="rp-clock" id="clock">00:00:00</div>
+        <div class="rp-loc" id="loc">LOC: ---</div>
+    </aside>
+
+    <!-- ═══════════════ BOTTOM BAR ═══════════════ -->
+    <footer class="bottom-bar">
+        <pre id="bottom-ascii" class="bottom-ascii" aria-hidden="true"></pre>
+        <div class="bottom-links">
+            <span class="bottom-label">// connect</span>
+            <a href="https://www.linkedin.com/in/john-rohal" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                <img src="./assets/linkedin.png" alt="LinkedIn" height="26" />
+            </a>
+            <a href="mailto:jr699122@ohio.edu" class="social-link" title="Email">
+                <img src="./assets/email.png" alt="Email" height="26" />
+            </a>
+            <a href="./assets/jsr_resume.pdf" download class="social-link" title="Resume">
+                <img src="./assets/resume.png" alt="Resume" height="26" />
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js?v=8"></script>
+</body>
+</html>
