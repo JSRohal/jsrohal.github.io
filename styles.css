@@ -340,8 +340,8 @@ body {
     font-size: .68rem; color: var(--text-dim); letter-spacing: .1em;
     min-width: 82px; flex-shrink: 0; padding-top: .05rem;
 }
-.pr-val { font-size: .84rem; color: var(--cyan); }
-.pr-accent { color: var(--text-bright); text-shadow: 0 0 4px var(--cyan-glow); }
+.pr-val { font-size: .84rem; color: var(--text-bright); }
+.pr-accent { color: var(--cyan); text-shadow: 0 0 4px var(--cyan-glow); }
 .status-dot-green {
     display: inline-block; width: 7px; height: 7px; border-radius: 50%;
     background: #22c55e; box-shadow: 0 0 6px #22c55e, 0 0 12px rgba(34,197,94,.4);
