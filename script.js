@@ -287,36 +287,36 @@ const ABOUT_DATA = {
     // desc (one paragraph), skills (array of tag strings)
     experience: [
         {
-            org: 'Ceco Concrete Construction',
-            role: 'Engineering Project Manager',
-            meta: 'Internship &nbsp;&middot;&nbsp; Summer 2024',
-            loc: 'Columbus, OH',
-            desc: 'Supported project scheduling and cost tracking across active concrete construction sites, coordinating with field crews and subcontractors to keep milestones on pace and documentation audit-ready.',
-            skills: ['Project Scheduling', 'Cost Tracking', 'MS Project', 'Field Coordination']
-        },
-        {
-            org: 'Ohio Dept. of Transportation',
-            role: 'Construction Engineer',
-            meta: 'Internship &nbsp;&middot;&nbsp; Summer 2023',
-            loc: 'Athens, OH',
-            desc: 'Performed field inspections and quality assurance checks on highway construction projects, logging results and material tests to verify compliance with state engineering specifications.',
-            skills: ['Field Inspection', 'QA / QC', 'Materials Testing', 'Technical Documentation']
+            org: 'Ceco Concrete Construction L.L.C.',
+            role: 'Project Manager',
+            meta: 'Internship &nbsp;&middot;&nbsp; May &ndash; Aug 2026',
+            loc: 'Cincinnati, OH',
+            desc: 'Performed preconstruction planning and estimating for multiple projects, including the $2.5B Cleveland Browns stadium. Generated FEA-driven structural analyses and conducted jobsite inspections.',
+            skills: ['Project Management', 'FEA Analysis', 'Cost Tracking', 'Scheduling & Coordination']
         },
         {
             org: 'Amazon Inc.',
             role: 'Equipment Operator',
-            meta: 'Full-Time &nbsp;&middot;&nbsp; 2022 &ndash; 2023',
-            loc: 'Rossford, OH',
+            meta: 'Full-Time &nbsp;&middot;&nbsp; May &ndash; Aug 2025',
+            loc: 'Imperial, PA',
             desc: 'Operated powered industrial equipment to move inventory through a high-volume fulfillment center, maintaining safety and throughput standards across shifting daily priorities.',
-            skills: ['Equipment Operation', 'Safety Compliance', 'Inventory Flow', 'Process Efficiency']
+            skills: ['Equipment Operation', 'Safety Compliance', 'Warehouse Operations', 'Process Efficiency']
+        },
+        {
+            org: 'Ohio Dept. of Transportation',
+            role: 'Construction Engineer',
+            meta: 'Internship &nbsp;&middot;&nbsp; May &ndash; Aug 2024',
+            loc: 'New Philadelphia, OH',
+            desc: 'Led field inspections and quality assurance checks on highway construction projects, logging results and material tests to verify compliance with state engineering specifications.',
+            skills: ['Construction Engineering', 'QC / QA', 'Materials Testing', 'Project Planning']
         },
         {
             org: 'Amazon Inc.',
-            role: 'FC Warehouse Associate',
-            meta: 'Part-Time &nbsp;&middot;&nbsp; 2021 &ndash; 2022',
-            loc: 'Rossford, OH',
+            role: 'F.C. Warehouse Associate',
+            meta: 'Part-Time &nbsp;&middot;&nbsp; May &ndash; Aug 2023',
+            loc: 'Imperial, PA',
             desc: 'Picked, packed, and sorted customer orders within a fast-paced fulfillment center environment, working as part of a team to consistently hit shift productivity targets.',
-            skills: ['Order Fulfillment', 'Inventory Management', 'Team Collaboration', 'Time Management']
+            skills: ['Workflow Optimization', 'Supply Chain Operations', 'Team Collaboration', 'Operational Efficiency']
         }
     ],
 
@@ -335,14 +335,20 @@ const ABOUT_DATA = {
     // same shape as experience, minus loc/skills (kept lighter-weight)
     extracurriculars: [
         {
-            org: 'OU Marching 110',
-            role: 'Active Member',
+            org: 'SAE Baja',
+            role: 'Manufacturing Team Member',
+            meta: 'Competition Engineering &nbsp;&middot;&nbsp; Jan &ndash; May 2025',
+            desc: `Modeled mechanical components, collaborated with other team members, and performed iterative product development for the purpose of competition.`
+        },
+        {
+            org: 'Ohio University Marching 110',
+            role: 'Active Member & Staff',
             meta: 'Marching Band &nbsp;&middot;&nbsp; Ongoing',
             desc: `Perform and rehearse as part of Ohio University's marching band, balancing a demanding practice schedule alongside coursework.`
         },
         {
             org: 'Session Musician',
-            role: 'Drums &middot; Guitar &middot; Saxophone',
+            role: 'Saxophone &middot; Guitar &middot; Drums',
             meta: 'Multi-Instrument &nbsp;&middot;&nbsp; Ongoing',
             desc: 'Play across multiple instruments in informal sessions and performances, keeping music a steady creative outlet outside of engineering work.'
         },
