@@ -58,10 +58,10 @@
     --bottom-ascii-opacity: .13;
     --icon-box-bg: #0d1220;
     --icon-box-bg-hover: #161d33;
-    --gold:            #fbff12;
-    --gold-rgb:        251, 255, 18;
-    --gold-glow:       rgba(251, 255, 18, 0.85);
-    --gold-glow-soft:  rgba(251, 255, 18, 0.3);
+    --gold:            #ffd300;
+    --gold-rgb:        255, 211, 0;
+    --gold-glow:       rgba(255, 211, 0, 0.3);
+    --gold-glow-soft:  rgba(255, 211, 0, 0.2);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
