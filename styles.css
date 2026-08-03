@@ -60,8 +60,8 @@
     --icon-box-bg-hover: #161d33;
     --gold:            #ffd300;
     --gold-rgb:        255, 211, 0;
-    --gold-glow:       rgba(255, 211, 0, 0.3);
-    --gold-glow-soft:  rgba(255, 211, 0, 0.2);
+    --gold-glow:       rgba(255, 211, 0, 0.1);
+    --gold-glow-soft:  rgba(255, 211, 0, 0.05);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
