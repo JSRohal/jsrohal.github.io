@@ -59,9 +59,9 @@
     --icon-box-bg: #0d1220;
     --icon-box-bg-hover: #161d33;
     --gold:            #ffd300;
-    --gold-rgb:        255, 211, 0;
-    --gold-glow:       rgba(255, 211, 0, 0.1);
-    --gold-glow-soft:  rgba(255, 211, 0, 0.05);
+    --gold-rgb:        305, 211, 0;
+    --gold-glow:       rgba(305, 211, 0, 0.1);
+    --gold-glow-soft:  rgba(305, 211, 0, 0.05);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
