@@ -167,25 +167,25 @@ function initContactAnims() {
 
 // ── Project data ─────────────────────────────────────────────────
 const PROJECTS = {
-    job_application_tracker: {
-        title: 'job_application_tracker',
-        tech:  ['Node.js', 'Express', 'JavaScript', 'Google Sheets', 'XLSX/CSV'],
-        images: ['./media/projects/job_application_tracker/1.jpg', './media/projects/job_application_tracker/2.jpg'],
-        full: `Built to solve a real problem during an active job search, this self-hosted dashboard eliminates the chaos of free-form status strings scattered across spreadsheets and email threads. The back end is a lightweight Node.js / Express server that accepts either a Google Sheets CSV export or a direct .xlsx / .csv file upload.
+    hermes_job_tracker: {
+        title: 'hermes_job_tracker',
+        tech:  ['1', '2', '3', '4', '5'],
+        images: ['./media/projects/hermes_job_tracker/1.jpg', './media/projects/hermes_job_tracker/2.jpg'],
+        full: `...
 
-The core logic normalizes whatever status text the user wrote — "App submitted", "Heard back", "Phone screen scheduled" — into a strict funnel: Applied → Screened → Interviewed → Offered → Accepted. From that normalized data the app computes funnel conversion rates: response rate, interview conversion rate, and offer rate, all rendered as live summary cards with a full breakdown table beneath.
+...
 
-The project ships with a pre-formatted downloadable spreadsheet template and a guided setup flow requiring zero API keys or OAuth tokens. All data stays local on the user's machine. A roadmap item is adding a kanban board view for drag-and-drop status updates directly in the browser.`
+...`
     },
-    guardian_state_recognizer: {
-        title: 'guardian_state_recognizer',
-        tech:  ['AWS CDK', 'Lambda', 'S3', 'SageMaker', 'Python', 'YOLOv8'],
-        images: ['./media/projects/guardian_state_recognizer/1.jpg', './media/projects/guardian_state_recognizer/2.jpg'],
-        full: `Guardian State Recognizer is a production-grade AWS ML pipeline built to detect dangerous driver states — drowsiness, distraction, and phone use — in real time using computer vision.
+    freight_elevator: {
+        title: 'freight_elevator',
+        tech:  ['SolidWorks', 'Machine Design', 'FEA / DFM', 'Design Optimization', 'Team Collaboration'],
+        images: ['./media/projects/freight_elevator/1.jpg', './media/projects/freight_elevator/2.jpg'],
+        full: `This semester-long design project focused on redesigning an industrial freight elevator to improve safety, reliability, functionality, and structural performance while maintaining manufacturability. Working within a multidisciplinary engineering team, I contributed to the complete engineering design process, from identifying design deficiencies through validating final improvements using analytical calculations and finite element analysis.
 
-The infrastructure is deployed entirely with AWS CDK in Python. An S3 event notification triggers a Lambda function whenever new sensor data lands in the bucket. The Lambda streams the gzipped JSONL file line-by-line, keeping memory usage flat regardless of file size, validates each record's schema, and deterministically splits records into a 90/10 train/test partition plus a held-out validation set. It then writes an Amazon SageMaker data-channel manifest pointing at the split S3 prefixes.
+The project involved developing detailed 3D part models, assemblies, and engineering drawings in SolidWorks while evaluating critical components through stress analysis and engineering calculations. Multiple system improvements were implemented, including strengthening structural support brackets, redesigning drivetrain shafts to improve fatigue performance, optimizing the loading platform for increased efficiency and forklift compatibility, and incorporating protective guarding around rotating components to improve operator safety.
 
-The downstream SageMaker training job fine-tunes a YOLOv8 object-detection model on labeled driver-camera frames. Keeping the data pipeline decoupled from the training job means either side can evolve independently. The Lambda's streaming approach keeps cold-start memory well under the 512 MB Lambda limit even for multi-gigabyte daily uploads.`
+Finite element analysis was used to validate analytical calculations and guide iterative design improvements, ensuring each modification met performance and safety objectives. Throughout the project, emphasis was placed on balancing structural integrity, ease of use, manufacturability, and long-term reliability while documenting design decisions through professional engineering reports and technical documentation.`
     },
     root_locus_function: {
         title: 'root_locus_function',
