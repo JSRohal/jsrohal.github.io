@@ -246,26 +246,6 @@ Execution walks the command list: for a single command, the shell forks and call
 The front end is built with React and Tailwind CSS, using component state and React context to manage the live game board, on-screen keyboard, and guess history. The back end is Node.js / Express connected to a Supabase (PostgreSQL) database storing the daily word list, per-user session state, and aggregate guess statistics. Daily word selection and result validation both happen server-side, preventing clients from extracting the answer by inspecting network traffic.
 
 The solver page accepts any starting word and progressively narrows the remaining valid-word list using information-theoretic filtering — each colored square eliminates candidates whose letters contradict the revealed constraints, until a unique solution is found. Additional content shipped as stretch goals includes a speed mode with a countdown timer and a hard mode that enforces using all confirmed letters in subsequent guesses. Test coverage includes Jest unit tests for the solver algorithm and constraint-filtering logic, plus UML class and sequence diagrams produced for the final deliverable.`
-    },
-    spotify_karaoke_app: {
-        title: 'spotify_karaoke_app',
-        tech:  ['React', 'React Router', 'Node.js', 'Express', 'Spotify Web API', 'Lyric Finder API'],
-        images: ['./media/projects/spotify_karaoke_app/1.jpg', './media/projects/spotify_karaoke_app/2.jpg'],
-        full: `A full-stack web application that turns any Spotify Premium account into a karaoke machine by combining real-time Spotify playback data with synchronized lyrics displayed in the browser.
-
-Authentication uses the Spotify OAuth 2.0 Authorization Code flow handled entirely on the Node.js / Express back end, which keeps the client secret off the browser and issues a session cookie to the React front end. Once logged in, users browse their playlists, queue tracks, and control playback — play, pause, skip, seek — through the Spotify Web Playback SDK, which streams audio directly in the browser tab without requiring the desktop app.
-
-While a track plays, the server queries the Lyric Finder API with the track title and artist to retrieve time-stamped lyrics. A 500 ms polling loop reads the current playback position from the Spotify API and scrolls the lyrics panel to the matching line, creating a karaoke-style synchronized display. Album artwork is fetched from the Spotify Album Cover API and rendered as a blurred, color-dominant background behind the lyrics. The React front end uses React Router for page transitions (login → library → player) and custom hooks for playback state and lyrics synchronization.`
-    },
-    arduino_rtc_led_sign: {
-        title: 'arduino_rtc_led_sign',
-        tech:  ['Arduino', 'C / C++', 'I2C', 'RTC DS3231', 'LED Matrix', 'SPI'],
-        images: ['./media/projects/arduino_rtc_led_sign/1.jpg', './media/projects/arduino_rtc_led_sign/2.jpg'],
-        full: `A standalone embedded hardware project combining an Arduino Uno, a DS3231 real-time clock module, and a MAX7219-driven LED matrix display into a self-contained desk clock and scrolling message sign.
-
-The DS3231 is wired to the Arduino over I2C. On every power-on, the firmware reads a validity flag from the RTC's non-volatile registers: if the oscillator has not lost power, the stored time is read directly without resetting to a compile-time default. This means the display retains accurate time indefinitely across power cycles without re-flashing.
-
-The LED matrix is updated frame-by-frame in a timed interrupt: the firmware maintains a framebuffer in SRAM, renders the current time or message string into it using a 5×7 pixel font stored in PROGMEM to save RAM, and blits each 8-column frame to the MAX7219 driver over SPI at roughly 30 fps. Scrolling text is implemented by shifting the framebuffer left one pixel column per interrupt tick, producing a smooth marquee effect. A serial command interface over USB lets users update the displayed message or correct the clock time at runtime without re-uploading firmware.`
     }
 };
 
