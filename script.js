@@ -187,25 +187,25 @@ The infrastructure is deployed entirely with AWS CDK in Python. An S3 event noti
 
 The downstream SageMaker training job fine-tunes a YOLOv8 object-detection model on labeled driver-camera frames. Keeping the data pipeline decoupled from the training job means either side can evolve independently. The Lambda's streaming approach keeps cold-start memory well under the 512 MB Lambda limit even for multi-gigabyte daily uploads.`
     },
-    cancer_predictor: {
-        title: 'cancer_predictor',
-        tech:  ['Python', 'Cython', 'NumPy', 'ID3 / Decision Tree', 'Oversampling'],
-        images: ['./media/projects/cancer_predictor/1.jpg', './media/projects/cancer_predictor/2.jpg'],
-        full: `This project implements the ID3 decision tree algorithm entirely from scratch with no scikit-learn or sklearn wrappers. The goal was to fully internalize information-gain splitting, recursive tree construction, and the practical effects of class imbalance on model predictions.
+    root_locus_function: {
+        title: 'root_locus_function',
+        tech:  ['Control Systems', 'Dynamic Systems', 'Systems Engineering', 'Mathematical Modeling', 'Numerical Methods'],
+        images: ['./media/projects/root_locus_function/1.jpg', './media/projects/root_locus_function/2.jpg'],
+        full: `This project focused on developing a custom MATLAB implementation of the root locus method, replicating the functionality of MATLAB's built-in rlocus() function without relying on the existing tool. The objective was to gain a deeper understanding of control system stability analysis by building the underlying algorithm from first principles.
 
-The dataset consists of gene-mutation feature vectors labeled as cancerous or non-cancerous. Because the positive class is heavily underrepresented, raw accuracy is a misleading metric. The project handles imbalance by oversampling the minority class to balance training, then evaluates all metrics on the original distribution to reflect real-world performance.
+The program was designed to calculate and plot the movement of closed-loop poles as controller gain varied across a specified range. This required computing system poles for successive gain values, organizing the resulting data, and generating an accurate graphical representation of the root locus. Careful attention was given to numerical accuracy, algorithm efficiency, and visualization to produce results consistent with industry-standard software.
 
-The main computational bottleneck is computing Shannon entropy across every feature and every possible split threshold at each node. This hot path was extracted into a Cython extension module and compiled with -O3 and -march=native, yielding a 6–8× speedup over the pure-Python baseline on large feature sets. Final performance is reported as precision, recall, and F1 on a held-out test set.`
+After implementation, the custom function was validated by comparing its output with MATLAB's native rlocus() function. The comparison confirmed the accuracy of the algorithm while reinforcing the mathematical concepts behind root locus analysis and closed-loop system stability.`
     },
-    cgra_hw_security_research: {
-        title: 'cgra_hw_security_research',
-        tech:  ['CGRA-Flow', 'VectorCGRA', 'Garnet', 'PyMTL3', 'C++', 'Python'],
-        images: ['./media/projects/cgra_hw_security_research/1.jpg', './media/projects/cgra_hw_security_research/2.jpg'],
-        full: `Coarse-Grained Reconfigurable Architectures (CGRAs) offer the programmability of FPGAs with significantly lower reconfiguration overhead, making them attractive for accelerating compute-intensive kernels in edge and embedded systems.
+    automated_pid_tuning: {
+        title: 'automated_pid_tuning',
+        tech:  ['Control Systems', 'PID Control', 'System Modeling', 'Algorithm Development', 'Automation'],
+        images: ['./media/projects/automated_pid_tuning/1.jpg', './media/projects/automated_pid_tuning/2.jpg'],
+        full: `This project focused on developing an automated PID tuning algorithm capable of improving the performance of randomly generated dynamic systems. The objective was to create a MATLAB program that could analyze an unknown plant, evaluate its response under randomly initialized PID gains, and iteratively optimize the controller until a more desirable system response was achieved.
 
-The project used the CGRA-Flow toolchain to compile C++ kernels onto VectorCGRA fabric, with the Garnet interconnect model and PyMTL3 simulation and verification framework. Kernels were profiled for throughput, latency, and resource utilization across different array sizes and dataflow configurations to understand the performance envelope.
+The algorithm generated random plant transfer functions and initial proportional, integral, and derivative gains before simulating the closed-loop system response. Performance characteristics such as stability, overshoot, settling time, and steady-state behavior were evaluated after each iteration. Based on these results, the program adjusted the PID parameters and repeated the simulation, progressively improving controller performance through an automated optimization process.
 
-The security focus centered on a published CVE related to cache-timing side channels. The research investigated whether mapping security-critical operations onto a CGRA — where the execution schedule is fixed at compile time and memory-access patterns are fully predictable — could eliminate the timing variance that enables traditional cache timing attacks. A prototype "secure cache check" kernel was implemented and tested against a timing-attack harness, showing measurable timing variance reduction compared to the software baseline.`
+The project demonstrated the application of feedback control theory, dynamic system modeling, and computational optimization while highlighting the value of automation in engineering design. By replacing manual trial-and-error tuning with an iterative algorithm, the program efficiently converged toward improved controller performance across a wide range of system dynamics.`
     },
     gantry_carrier_shaft: {
         title: 'gantry_carrier_shaft',
