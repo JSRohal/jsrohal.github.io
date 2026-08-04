@@ -217,10 +217,10 @@ Comprehensive failure analysis was performed to evaluate bending stresses, yield
 
 Multiple design iterations were completed to optimize shaft dimensions and achieve the desired factors of safety while maintaining practical bearing sizes and manufacturable geometry. This project strengthened my experience in machine design, fatigue analysis, material selection, stress concentration evaluation, engineering calculations, and iterative mechanical design.`
     },
-    sae_baja: {
-        title: 'sae_baja',
+    sae_baja_design: {
+        title: 'sae_baja_design',
         tech:  ['3D CAD Modeling', 'DFM', 'Design Iteration', 'Team Collaboration', 'Competition Engineering'],
-        images: ['./media/projects/sae_baja/1.jpg', './media/projects/sae_baja/2.jpg'],
+        images: ['./media/projects/sae_baja_design/1.jpg', './media/projects/sae_baja_design/2.jpg'],
         full: `As a member of the SAE Baja Manufacturing Team, I contributed to the design and development of an off-road competition vehicle by creating and refining 3D CAD models of mechanical components using Onshape. Working within a multidisciplinary engineering team, I collaborated closely with manufacturing team members to ensure component designs supported the overall vehicle architecture while considering manufacturability, assembly, and performance requirements.
 
 I gained firsthand experience working in a collaborative engineering environment that emphasized communication, design reviews, and coordination between design and manufacturing teams.
