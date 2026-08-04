@@ -207,25 +207,25 @@ The project used the CGRA-Flow toolchain to compile C++ kernels onto VectorCGRA 
 
 The security focus centered on a published CVE related to cache-timing side channels. The research investigated whether mapping security-critical operations onto a CGRA — where the execution schedule is fixed at compile time and memory-access patterns are fully predictable — could eliminate the timing variance that enables traditional cache timing attacks. A prototype "secure cache check" kernel was implemented and tested against a timing-attack harness, showing measurable timing variance reduction compared to the software baseline.`
     },
-    systemverilog_cpu: {
-        title: 'systemverilog_cpu',
-        tech:  ['SystemVerilog', 'Verilator', 'MIPS ISA', 'Digital Design'],
-        images: ['./media/projects/systemverilog_cpu/1.jpg', './media/projects/systemverilog_cpu/2.jpg'],
-        full: `A ground-up implementation of a single-cycle MIPS-style CPU in SystemVerilog, designed to solidify understanding of digital logic at the register-transfer level and bridge the gap between architecture lecture and working silicon.
+    gantry_carrier_shaft: {
+        title: 'gantry_carrier_shaft',
+        tech:  ['Machine Design', 'Fatigue Analysis', 'Modified Goodman Analysis', 'DFMEA', 'Design Optimization'],
+        images: ['./media/projects/gantry_carrier_shaft/1.jpg', './media/projects/gantry_carrier_shaft/2.jpg'],
+        full: `This project focused on the design and analysis of carrier shafts for a gantry trolley system capable of transporting a 3-ton load over a 50-foot span multiple times per day throughout a 25-year operational life. The objective was to develop a shaft design that met long-term durability requirements while maintaining appropriate safety factors against yielding and fatigue.
 
-The datapath includes a 32-bit program counter, instruction memory (ROM), a 32-register file with dual read ports and one synchronous write port, a 32-bit ALU supporting add, subtract, AND, OR, set-less-than, and logical shifts, a sign-extension unit for 16-bit immediates, and separate branch and jump resolution logic. The control unit decodes the 6-bit opcode and function fields into a combinational lookup that drives all datapath multiplexers and memory write-enables in a single clock cycle.
+Comprehensive failure analysis was performed to evaluate bending stresses, yielding, and fatigue performance. Both the S-N fatigue model and Modified Goodman fatigue criterion were used to assess the effects of repeated loading and verify long-term reliability under non-rotating operating conditions.
 
-Data memory supports word-aligned loads (lw) and stores (sw). Verification was carried out with Verilator, which compiles the SystemVerilog to a C++ simulation model. A custom testbench exercises the full instruction set — arithmetic, logic, memory, branches both taken and not-taken, and direct jumps — checking register and memory state after each instruction. All tests pass with no timing violations in the single-cycle model.`
+Multiple design iterations were completed to optimize shaft dimensions and achieve the desired factors of safety while maintaining practical bearing sizes and manufacturable geometry. This project strengthened my experience in machine design, fatigue analysis, material selection, stress concentration evaluation, engineering calculations, and iterative mechanical design.`
     },
-    parallel_hash_cracker: {
-        title: 'parallel_hash_cracker',
-        tech:  ['C', 'OpenMPI', 'SHA-256', 'Distributed Computing'],
-        images: ['./media/projects/parallel_hash_cracker/1.jpg', './media/projects/parallel_hash_cracker/2.jpg'],
-        full: `A high-performance distributed password cracker written in pure C using OpenMPI to parallelize a brute-force SHA-256 hash search across an arbitrary number of compute nodes or cores.
+    sae_baja: {
+        title: 'sae_baja',
+        tech:  ['3D CAD Modeling', 'DFM', 'Design Iteration', 'Team Collaboration', 'Competition Engineering'],
+        images: ['./media/projects/sae_baja/1.jpg', './media/projects/sae_baja/2.jpg'],
+        full: `As a member of the SAE Baja Manufacturing Team, I contributed to the design and development of an off-road competition vehicle by creating and refining 3D CAD models of mechanical components using Onshape. Working within a multidisciplinary engineering team, I collaborated closely with manufacturing team members to ensure component designs supported the overall vehicle architecture while considering manufacturability, assembly, and performance requirements.
 
-At startup, rank 0 reads the target hash and salt from the command line and broadcasts them to all ranks via MPI_Bcast. The full candidate search space — defined by a character set and password length range — is partitioned deterministically across ranks, so every candidate is checked exactly once with no duplication or coordination overhead during the search itself.
+I gained firsthand experience working in a collaborative engineering environment that emphasized communication, design reviews, and coordination between design and manufacturing teams.
 
-Each rank independently generates candidates in its assigned partition, salts and hashes them with OpenSSL's SHA-256 implementation, and compares the digest against the broadcast target. The key architectural decision is the early-termination protocol: when any rank finds the matching plaintext it sends a non-blocking MPI_Isend to all other ranks. Every rank polls for this signal between candidates with MPI_Iprobe and exits its loop immediately on receipt, rather than waiting for a collective barrier. In benchmarks on an 8-node cluster, early termination reduced total wall-clock time by up to 7× for passwords near the midpoint of the search space compared to a barrier-based design.`
+This experience strengthened my understanding of CAD-driven product development, collaborative engineering workflows, and the importance of designing components that balance performance, manufacturability, and integration within a complex mechanical system. The project also reinforced skills in teamwork, engineering communication, and supporting large-scale engineering projects from concept through production.`
     },
     battle_bot: {
         title: 'battle_bot',
