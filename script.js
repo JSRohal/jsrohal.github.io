@@ -237,15 +237,15 @@ The Flex scanner tokenizes raw input into command names, arguments, and all redi
 
 Execution walks the command list: for a single command, the shell forks and calls execvp in the child, optionally wiring stdio to file descriptors opened with the correct O_CREAT, O_TRUNC, or O_APPEND flags before exec. For a pipeline of N commands, the shell pre-creates N-1 pipe pairs and wires each command's stdout to the next command's stdin before dispatching all children, then waits on all PIDs after the final stage exits. Built-in commands (cd, exit, and pwd) are handled directly in the parent process to correctly modify working-directory state.`
     },
-    wordle_clone: {
-        title: 'wordle_clone',
-        tech:  ['React', 'Node.js', 'Tailwind CSS', 'Supabase', 'Jest'],
-        images: ['./media/projects/wordle_clone/1.jpg', './media/projects/wordle_clone/2.jpg'],
-        full: `A full-featured Wordle clone developed as a team capstone project, with the primary goal of practicing real-world collaborative software engineering: Git feature branches, pull requests, code review, and continuous integration.
+    drum_pedal_analysis: {
+        title: 'drum_pedal_analysis',
+        tech:  ['MATLAB', 'Kinematics', 'Inverse Dynamics', 'Mechanical Modeling', 'Numerical Methods'],
+        images: ['./media/projects/drum_pedal_analysis/1.jpg', './media/projects/drum_pedal_analysis/2.jpg'],
+        full: `This capstone project focused on analyzing the motion and dynamic behavior of a bass drum pedal by simplifying its geometry into a rocker-rocker four-bar linkage with a link extension. The project combined theoretical kinematics with computational modeling to develop a complete representation of the mechanism throughout its full range of motion.
 
-The front end is built with React and Tailwind CSS, using component state and React context to manage the live game board, on-screen keyboard, and guess history. The back end is Node.js / Express connected to a Supabase (PostgreSQL) database storing the daily word list, per-user session state, and aggregate guess statistics. Daily word selection and result validation both happen server-side, preventing clients from extracting the answer by inspecting network traffic.
+A custom MATLAB program was developed to solve the position, velocity, and acceleration of every link within the mechanism using vector loop equations and numerical methods. Building upon the kinematic solution, an inverse dynamic analysis was performed to determine joint reaction forces, required input torque, and dynamic loading throughout the motion cycle. The program also generated visualizations and plots of the mechanism's movement and performance, allowing the analytical results to be validated and interpreted.
 
-The solver page accepts any starting word and progressively narrows the remaining valid-word list using information-theoretic filtering — each colored square eliminates candidates whose letters contradict the revealed constraints, until a unique solution is found. Additional content shipped as stretch goals includes a speed mode with a countdown timer and a hard mode that enforces using all confirmed letters in subsequent guesses. Test coverage includes Jest unit tests for the solver algorithm and constraint-filtering logic, plus UML class and sequence diagrams produced for the final deliverable.`
+The completed analysis provided valuable insight into the relationship between mechanism geometry, motion characteristics, and force transmission while demonstrating the application of computational methods to solve complex mechanical engineering problems.`
     }
 };
 
