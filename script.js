@@ -227,15 +227,15 @@ At startup, rank 0 reads the target hash and salt from the command line and broa
 
 Each rank independently generates candidates in its assigned partition, salts and hashes them with OpenSSL's SHA-256 implementation, and compares the digest against the broadcast target. The key architectural decision is the early-termination protocol: when any rank finds the matching plaintext it sends a non-blocking MPI_Isend to all other ranks. Every rank polls for this signal between candidates with MPI_Iprobe and exits its loop immediately on receipt, rather than waiting for a collective barrier. In benchmarks on an 8-node cluster, early termination reduced total wall-clock time by up to 7× for passwords near the midpoint of the search space compared to a barrier-based design.`
     },
-    custom_bash_shell: {
-        title: 'custom_bash_shell',
-        tech:  ['C++', 'Flex', 'Bison', 'POSIX', 'fork / exec'],
-        images: ['./media/projects/custom_bash_shell/1.jpg', './media/projects/custom_bash_shell/2.jpg'],
-        full: `A feature-complete Unix shell built in C++ using Flex for lexical analysis and Bison for LALR(1) parsing, implementing the core of a POSIX-compatible shell from first principles without wrapping system shells.
+    battle_bot: {
+        title: 'battle_bot',
+        tech:  ['SolidWorks', '3D Printing', 'Mechanical Assembly', 'Rapid Prototyping', 'Soldering / Wiring'],
+        images: ['./media/projects/battle_bot/1.jpg', './media/projects/battle_bot/2.jpg'],
+        full: `This project involved designing, manufacturing, and assembling a competitive battle bot capable of withstanding the demands of head-to-head robotic competition. The objective was to create a reliable and innovative design while integrating mechanical, electrical, and manufacturing principles into a fully functional system.
 
-The Flex scanner tokenizes raw input into command names, arguments, and all redirection operators: < (stdin), > (stdout overwrite), >> (stdout append), 2> (stderr overwrite), and 2>> (stderr append), as well as the pipe | symbol and command terminators. The Bison grammar assembles tokens into a linked list of command structs, where each node holds an argv array, optional input/output/error file paths and flags, and a next pointer for pipelining.
+The development process began with creating detailed 3D CAD models of the chassis, wheel assemblies, and weapon system in SolidWorks. Multiple design iterations were completed to improve component fit, strength, and overall performance throughout the build process. Following fabrication, the robot was assembled entirely by hand, including the installation and wiring of DC motors, electronic speed controllers (ESCs), switches, and other electrical components.
 
-Execution walks the command list: for a single command, the shell forks and calls execvp in the child, optionally wiring stdio to file descriptors opened with the correct O_CREAT, O_TRUNC, or O_APPEND flags before exec. For a pipeline of N commands, the shell pre-creates N-1 pipe pairs and wires each command's stdout to the next command's stdin before dispatching all children, then waits on all PIDs after the final stage exits. Built-in commands (cd, exit, and pwd) are handled directly in the parent process to correctly modify working-directory state.`
+The completed battle bot successfully advanced to the finals of the competition and was recognized with the Most Creative Design award, demonstrating innovative engineering, effective system integration, and successful execution of the complete product development process.`
     },
     drum_pedal_analysis: {
         title: 'drum_pedal_analysis',
