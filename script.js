@@ -240,7 +240,7 @@ Execution walks the command list: for a single command, the shell forks and call
     drum_pedal_analysis: {
         title: 'drum_pedal_analysis',
         tech:  ['MATLAB', 'Kinematics', 'Inverse Dynamics', 'Mechanical Modeling', 'Numerical Methods'],
-        images: ['./media/projects/drum_pedal_analysis/1.jpg', './media/projects/drum_pedal_analysis/2.jpg'],
+        images: ['./media/projects/drum_pedal_analysis/1.png', './media/projects/drum_pedal_analysis/2.png'],
         full: `This capstone project focused on analyzing the motion and dynamic behavior of a bass drum pedal by simplifying its geometry into a rocker-rocker four-bar linkage with a link extension. The project combined theoretical kinematics with computational modeling to develop a complete representation of the mechanism throughout its full range of motion.
 
 A custom MATLAB program was developed to solve the position, velocity, and acceleration of every link within the mechanism using vector loop equations and numerical methods. Building upon the kinematic solution, an inverse dynamic analysis was performed to determine joint reaction forces, required input torque, and dynamic loading throughout the motion cycle. The program also generated visualizations and plots of the mechanism's movement and performance, allowing the analytical results to be validated and interpreted.
