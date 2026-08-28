@@ -1,6 +1,6 @@
-// Retro Terminal Portfolio — v9
+// Retro Terminal Portfolio — v10
 // nav · clock · ASCII animations · memory-load animation ·
-// project expand · contact animations · IP lookup
+// project expand · contact animations
 
 // ── Navigation ───────────────────────────────────────────────────
 const navLinks     = document.querySelectorAll('.nav-link');
@@ -74,8 +74,7 @@ function animateHomeSequence(asciiLineCount) {
         el.style.animationDelay = `${ASCII_END_MS + i * 260}ms`;
     });
 
-    // Memory bar: starts loading right when its own boot-row fades in,
-    // fills over ~900ms with a real "loading" tick, like a terminal.
+    // Memory bar: starts loading right when its own boot-row fades in
     const memRowIndex = bootRows.length - 1; // memory row is last boot-line
     const memRowDelay = ASCII_END_MS + memRowIndex * 260;
     const memFillEl   = document.getElementById('mem-fill');
@@ -250,9 +249,6 @@ The completed analysis provided valuable insight into the relationship between m
 };
 
 // ── About tab content ─────────────────────────────────────────────
-// Everything shown in the About tab's four modules lives here. To add
-// or edit a job, credential, or extracurricular, just add/edit an
-// object in the matching array below — nothing else needs to change.
 const ABOUT_DATA = {
     profile: {
         photo: './media/profile.jpg',
@@ -264,7 +260,7 @@ const ABOUT_DATA = {
     },
 
     // each entry: org, role, meta (short "type · date" line), loc,
-    // desc (one paragraph), skills (array of tag strings)
+    // desc, skills (array of tag strings)
     experience: [
         {
             org: 'Ceco Concrete Construction L.L.C.',
@@ -312,7 +308,7 @@ const ABOUT_DATA = {
         ]
     },
 
-    // same shape as experience, minus loc/skills (kept lighter-weight)
+    // same shape as experience, minus loc/skills
     extracurriculars: [
         {
             org: 'SAE Baja',
@@ -649,8 +645,7 @@ function initAboutWheel() {
         });
     }
 
-    // skills-list toggle buttons — event delegation, since the
-    // experience/extracurriculars content is generated dynamically
+    // skills-list toggle buttons — event delegation
     document.addEventListener('click', e => {
         const btn = e.target.closest('.skills-toggle');
         if (!btn) return;
@@ -661,8 +656,7 @@ function initAboutWheel() {
     });
 }
 
-// education module — typewriter-style terminal readout, plays once per
-// page load (like the home tab boot sequence); later opens show the
+// education module — typewriter-style terminal readout
 // finished text immediately instead of replaying
 let eduLogPlayed = false;
 let eduLogGen = 0;
@@ -710,10 +704,6 @@ function typeEduLog() {
 }
 
 // ── System meters (CPU load proxy + network quality) ─────────────
-// Browsers deliberately do not expose real OS-level CPU usage or WiFi
-// signal strength to JS (privacy/security sandboxing). These meters use
-// the closest genuine, live measurements the platform actually exposes
-// rather than fabricating numbers:
 //   CPU -> actual main-thread frame-timing (a real measure of this
 //          device's current rendering load)
 //   NET -> the Network Information API's real downlink/effectiveType
