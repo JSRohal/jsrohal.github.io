@@ -2,8 +2,7 @@
    Terminal Portfolio — v10
    Default theme  : standard — white · navy · grey · black
    Toggle theme   : retro — deep navy · rose red · electric cyan
-   Layout  : CSS grid — sidebar | content | right
-                              bottom bar
+   Layout  : CSS grid — sidebar | content | right | bottom bar
    ================================================ */
 
 :root {
@@ -107,8 +106,7 @@ body {
     52%{opacity:1} 79%{opacity:1} 80%{opacity:.95} 82%{opacity:1}
 }
 
-/* ── Retro-only gold accent (Cyberpunk 2077 skill-tree inspired) ──
-   used sparingly: project card titles, the home tab's
+/* ── Retro-only gold accent ──
    USER_PROFILE.DAT header, and each about-module's panel title */
 :root[data-theme="retro"] .tl-card h3,
 :root[data-theme="retro"] .profile-header,
@@ -267,7 +265,7 @@ body {
     animation: asciiShimmer 4.5s ease-in-out infinite 1.8s;
 }
 
-/* per-line reveal + wave (same mechanism as before) */
+/* per-line reveal + wave */
 .ascii-line {
     display: block; opacity: 0;
     animation:
@@ -413,11 +411,7 @@ body {
 }
 
 /* ════════════════════════════════════════════════
-   ABOUT — cyberpunk nav wheel + single content view
-   layout: small radial wheel top-left selects one of
-           4 modules; the chosen module fills the rest
-           of the tab. the wheel's center X clears the
-           selection back to an idle/empty state.
+   ABOUT — nav wheel + single content view
 ════════════════════════════════════════════════ */
 #about.screen.active { display: flex; flex-direction: column; }
 
@@ -538,13 +532,7 @@ body {
     font-family: var(--mono); color: var(--text-dim);
 }
 
-/* shared vertical-timeline list (experience + extracurriculars).
-   Each entry sizes to its own content (not forced to an equal share),
-   and the rail/line is absolutely positioned against the entry's own
-   padding box. The line's top/bottom are pinned to the dot's exact
-   vertical center (top-offset + half its own height) so it starts
-   flush at this dot and reaches exactly to the next dot's center —
-   never peeking above the first or falling short of the next one. */
+/* shared vertical-timeline list (experience + extracurriculars). */
 .vt-list { flex: 1; min-height: 0; margin-bottom: 1.25rem; }
 .vt-entry { position: relative; padding-bottom: 1.7rem; }
 .vt-entry:last-child { padding-bottom: 0; }
@@ -593,11 +581,7 @@ body {
 /* ── education showcase ─────────────────────────────────────── */
 .edu-showcase { display:flex; flex-direction:column; gap:1.4rem; flex:1; margin-bottom: 1.25rem; }
 
-/* real, rendered element (not just margin/padding) placed as the
-   final child of every module — guarantees breathing room at the end
-   of scrollable content, since some browsers silently clip a
-   container's trailing padding/margin once you're scrolled to the
-   bottom of a flex column, but never clip an actual element's box. */
+/* real, rendered element (not just margin/padding) */
 .module-end-spacer { flex-shrink: 0; height: 1.5rem; }
 .edu-log {
     font-family:var(--mono); font-size:.78rem; line-height:1.75;
@@ -915,25 +899,14 @@ body {
     .right-panel{display:none}
 
     /* the desktop app-shell relies on a fixed 100vh grid so inner
-       flex:1 / overflow-y:auto chains can fill and internally scroll.
-       On mobile the page itself grows and scrolls instead, so every
-       link in that chain needs to switch to natural auto-height flow
-       or content silently clips inside the old fixed-height boxes. */
+       flex:1 / overflow-y:auto chains can fill and internally scroll. */
     .terminal{height:auto;overflow:visible;padding:.85rem}
     .screen{height:auto;flex:none;overflow-y:visible;padding:1rem 1.15rem}
     #home.screen.active,#contact.screen.active,#about.screen.active{height:auto}
     #projects-list{height:auto}
-    /* .project-detail no longer sets height:100% (fixed above), nothing to override */
     .contact-rows{flex:none;overflow:visible}
 
-    /* nested flex/grid items default to min-width:auto, meaning they
-       refuse to shrink below their own content's intrinsic width —
-       so a wide element anywhere inside .terminal (the ASCII art pre
-       block, an unbroken email/URL, etc.) can force its whole flex/
-       grid ancestor chain wider than the viewport, requiring the user
-       to pan sideways. Blanket-resetting every descendant here removes
-       that floor everywhere at once; two elements that intentionally
-       rely on a real min-width are restored right after. */
+    /* nested flex/grid items default to min-width:auto. */
     .terminal *{min-width:0}
     .bd{min-width:16px}
     .timeline-track{min-width:max-content}
@@ -949,11 +922,8 @@ body {
     .about-nav{flex-direction:row;width:100%;justify-content:center;gap:1rem}
     .nav-wheel{width:150px}
     .about-content{flex:1;min-height:280px}
-    /* each module view (.about-view) has its OWN height:100%/overflow-y:auto
-       independent of the outer .screen fix — missed last round, and the
-       real reason the bottom spacer never became visible on mobile */
-    /* .about-view no longer has its own independent scroll container
-       (fixed above, for both desktop and mobile) — nothing to override here */
+    /* each module view (.about-view) has its OWN height:100%/overflow-y:auto */
+    /* .about-view no longer has its own independent scroll container */
     .profile-body{flex-direction:column}
     .profile-photo{width:100%;aspect-ratio:16/9;align-self:stretch}
     .detail-body{grid-template-columns:1fr}
@@ -964,11 +934,7 @@ body {
     .theme-toggle-label{display:none} .theme-toggle{padding:.4rem}
     .social-link{width:36px;height:36px} .social-link img{width:17px;height:17px}
 
-    /* defensive fallback: guarantee safe, small project-card sizing on
-       mobile viewports even if @container size queries aren't supported
-       by the browser (the .timeline-scroll-wrapper min-height floor
-       already keeps things safe when container queries DO work — this
-       is a backstop for when they don't) */
+    /* defensive fallback: guarantee safe */
     .timeline-node { width: 196px; }
     .tl-node-dot { width: 11px; height: 11px; border-width: 2px; }
     .tl-card { width: 178px; max-height: 108px; padding: .55rem .7rem; }
@@ -976,11 +942,7 @@ body {
     .card-brief { font-size: .72rem; line-height: 1.4; -webkit-line-clamp: 2; }
     .card-expand { font-size: .64rem; padding: .18rem .5rem; margin-top: .4rem; }
 
-    /* structural fix, not another size tweak: force every card below the
-       spine on mobile. cards positioned ABOVE the spine are the ones
-       that can clip against the wrapper's top edge — removing "above"
-       placement entirely on mobile removes that failure mode outright,
-       rather than trying to calculate a height that "just barely" fits it */
+    /* structural fix */
     .tl-card--above { bottom: auto; top: calc(50% + 10px); }
     .tl-card--below { top: calc(50% + 10px); }
     .timeline-node:has(.tl-card--above) .tl-year { top: auto; bottom: calc(50% + 10px); font-size: .62rem; }
